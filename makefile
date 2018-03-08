@@ -15,6 +15,7 @@ all:
 	$(LD) $(LDFLAGS) *.o -o main.elf
 	$(CP) $(CPFLAGS) main.elf main.hex
 	$(DMP) -d main.elf > main.txt
+	if [ ! -x "output" ]; then mkdir output; fi
 	mv main.elf output
 	mv main.hex output
 	mv main.txt output
