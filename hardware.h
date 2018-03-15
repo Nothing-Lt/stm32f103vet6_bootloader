@@ -3,8 +3,16 @@
 
 #define uint32_t unsigned int
 
-#define RCC_BASE   0x40021000
-#define GPIOB_BASE 0x40010c00
+#define RCC_BASE     0x40021000
+#define USART1_BASE  0x40013800
+#define GPIO_BASE    0x40010800
+#define GPIOA_BASE   GPIO_BASE
+#define GPIOB_BASE  (GPIO_BASE + 0x400)
+#define GPIOC_BASE  (GPIO_BASE + 0x800)
+#define GPIOD_BASE  (GPIO_BASE + 0xc00)
+#define GPIOE_BASE  (GPIO_BASE + 0x1000)
+#define GPIOF_BASE  (GPIO_BASE + 0x1800)
+#define GPIOG_BASE  (GPIO_BASE + 0x1800)
 
 struct RCC_STRUCT
 {
@@ -30,6 +38,17 @@ struct GPIO_STRUCT
 	uint32_t BSRR;
 	uint32_t BRR;
 	uint32_t LCKR;
+};
+
+struct USART_STRUCT
+{
+	uint32_t SR;
+	uint32_t DR;
+	uint32_t BRR;
+	uint32_t CR1;
+	uint32_t CR2;
+	uint32_t CR3;
+	uint32_t GTPR;
 };
 
 #endif

@@ -3,9 +3,9 @@
 
 int main()
 {
-	init_debug_led();
+	debug_led_init();
 
-	flash_debug_led();
+	debug_led_flash();
 
 	return 0;
 }

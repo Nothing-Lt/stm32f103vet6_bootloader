@@ -2,7 +2,7 @@
 #include "../hardware.h"
 #include "../util/util.h"
 
-void init_debug_led()
+void debug_led_init()
 {
 	struct RCC_STRUCT*  rcc  =(struct RCC_STRUCT*) RCC_BASE;
 	struct GPIO_STRUCT* gpiob=(struct GPIO_STRUCT*)GPIOB_BASE;
@@ -11,7 +11,7 @@ void init_debug_led()
 	gpiob->CRL=0x3;
 }
 
-void flash_debug_led()
+void debug_led_flash()
 {
 	struct GPIO_STRUCT* gpiob=(struct GPIO_STRUCT*)GPIOB_BASE;
 	
@@ -22,4 +22,14 @@ void flash_debug_led()
 		gpiob->ODR=FALSE;
 		delay_ms(100000);
 	}
+}
+
+void debug_usart_init(int buadrate)
+{
+
+}
+
+void debug_usart_log(char* debug_str)
+{
+
 }

@@ -1,8 +1,11 @@
 #ifndef DEBUG_H
 #define DEBUG_H
 
-void init_debug_led();
+void debug_led_init();
 
-void flash_debug_led();
+void debug_led_flash();
+
+void debug_usart_init(int buadrate);
+
 
 #endif
